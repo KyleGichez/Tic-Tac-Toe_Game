@@ -9,6 +9,7 @@ Before building a tic tac toe game, we need to know the features that we should 
 6. Check tie
 7. Player can win either horizontally, vertically or diagonally.
 """
+import random
 
 board = ["-","-","-",
         "-","-","-",
@@ -21,7 +22,9 @@ game_running = True
 """Print the game board"""
 def print_board(board):
     print(board[0] + " | " + board[1] + " | " + board[2])
+    print("-" * 10)
     print(board[3] + " | " + board[4] + " | " + board[5])
+    print("-" * 10)
     print(board[6] + " | " + board[7] + " | " + board[8])
 print_board(board)
 
@@ -95,9 +98,23 @@ def switch_player():
     else:
         player_one = "X" 
 
+"""Computer player"""
+def computer_play(board):
+    while player_one == "O":
+        player_position = random.randint(0, 8)
+
+        if board[player_position] == "-":
+            board[player_position] = "O"
+            switch_player()
+        else:
+            pass
+
 while game_running:
     print_board(board)
     player_input(board)
     check_win()
     check_tie(board)
     switch_player()
+    computer_play(board)
+    check_win()
+    check_tie(board)
