@@ -36,7 +36,7 @@ def player_input(board):
 """Check if player wins horizontally"""
 def check_horizontal(board):
     global winner
-    if board[0] == board[1] == board[2] and board[0] != "-":
+    if board[0] == board[1] == board[2] and board[1] != "-":
         winner = board[0]
         return True
     elif board[3] == board[4] == board[5] and board[3] != "-":
@@ -72,24 +72,32 @@ def check_diagonal(board):
         return True
     else: return False
 
-"""Check for the winner"""
-def check_win():
-    if check_horizontal(board) and check_vertical(board) and check_diagonal(board):
-        print(f"Hey, The winner is {winner}!")
-
 """"Check for tie game"""
 def check_tie(board):
+    global game_running
     if "-" not in board:
+        print_board(board)
         print("Hey, The game is a tie!")
         game_running = False
 
+"""Check for the winner"""
+def check_win():
+    if check_horizontal(board) or check_vertical(board) or check_diagonal(board):
+        print(f"Hey, The winner is {winner}!")
+    else:
+        pass
+
 """Switch player"""
 def switch_player():
+    global player_one
     if player_one == "X":
         player_one = "O"
     else:
-        player_one == "X" 
+        player_one = "X" 
 
 while game_running:
     print_board(board)
     player_input(board)
+    check_win()
+    check_tie(board)
+    switch_player()
