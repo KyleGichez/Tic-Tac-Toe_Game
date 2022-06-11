@@ -2,13 +2,14 @@
 Before building a tic tac toe game, we need to know the features that we should include;
 1. Print the tic tac toe game board
 2. Get player's input
-3. Check for tie 
-4. Check winner
+3. Check for winner 
+4. Check for tie
 4. Switch players
-5. Check for tie 
-6. Check winner
+5. Check winner 
+6. Check tie
 7. Player can win either horizontally, vertically or diagonally.
 """
+
 board = ["-","-","-",
         "-","-","-",
         "-","-","-"]
@@ -70,6 +71,24 @@ def check_diagonal(board):
         winner = board[2]
         return True
     else: return False
+
+"""Check for the winner"""
+def check_win():
+    if check_horizontal(board) and check_vertical(board) and check_diagonal(board):
+        print(f"Hey, The winner is {winner}!")
+
+""""Check for tie game"""
+def check_tie(board):
+    if "-" not in board:
+        print("Hey, The game is a tie!")
+        game_running = False
+
+"""Switch player"""
+def switch_player():
+    if player_one == "X":
+        player_one = "O"
+    else:
+        player_one == "X" 
 
 while game_running:
     print_board(board)
