@@ -1,6 +1,6 @@
 # Tic-Tac-Toe Game 
 
-## TTable of Contents
+## Table of Contents
 - [Overview](#overview)
 - [Installation](#installation)
 - [Setup](#setup)
