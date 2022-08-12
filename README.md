@@ -21,7 +21,7 @@ Also, you can choose to download this project to your local working environment 
 ### Set-up
 On your terminal run the following command:
 ````Set-up 
-$ python3 tic-tac-toe.py
+$ python3 tic_tac_toe.py
 ````
 
 ### Project Implementation
