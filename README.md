@@ -12,7 +12,7 @@
 This is a software program built in python3. It shows you how to write functions, and also manipulate python methods and objects. Let's have a look ⏩
 
 ### Installation
-To install this flask application, clone this repository into your local working environment and open it in your favorite IDE.
+To install this project, clone this repository into your local working environment and open it in your favorite IDE.
 ````clone repository
 git clone  https://github.com/KyleGichez/Tic-Tac-Toe_Game.git
 ````
